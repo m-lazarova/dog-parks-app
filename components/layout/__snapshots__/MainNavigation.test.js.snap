@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainNavigation Links render correctly 1`] = `
+Array [
+  <a
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    The React Dog Parks
+  </a>,
+  <a
+    href="/all-dog-parks"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    All Dog Parks
+  </a>,
+  <a
+    href="/new-dog-park"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    Add a New Dog Park
+  </a>,
+]
+`;
