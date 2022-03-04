@@ -1,5 +1,6 @@
+import NewParkForm from "../components/parks/NewParkForm";
 const NewDogPark = () => {
-  return <p>Placeholder page for adding a new park</p>
+  return <NewParkForm />
 }
 
 export default NewDogPark;
