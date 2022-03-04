@@ -1,5 +1,6 @@
+import ParkList from '../components/parks/ParkList';
 const AllDogParks = () => {
-  return <p>Placeholder for all dog parks page</p>
+  return <ParkList />
 };
 
 export default AllDogParks;
