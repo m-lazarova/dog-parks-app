@@ -4,7 +4,9 @@ import classes from './MainNavigation.module.css';
 const MainNavigation = () => {
   return (
     <header className={classes.header}>
-      <div>The React Dog Parks</div>
+      <div>
+        <Link href='/'>The React Dog Parks</Link>
+      </div>
       <nav>
         <ul>
           <li>
