@@ -1,26 +1,36 @@
+/* eslint-disable react/jsx-key */
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react';
 import MainNavigation from './MainNavigation';
+import renderer from 'react-test-renderer';
+import Link from 'next/link';
 
 describe('MainNavigation', () => {
-  it('should render text "The React Dog Parks"', () => {
-    render(<MainNavigation />);
+  describe('should render text', () => {
+    const textStrings = [
+      'The React Dog Parks',
+      'All Dog Parks',
+      'Add a New Dog Park'
+    ];
 
-    const dogParksString = screen.getByText('The React Dog Parks');
-    expect(dogParksString).toBeInTheDocument();
+    it.each(textStrings)('%s correctly', (textString) => {
+      render(<MainNavigation />);
+      
+      const str = screen.getByText(textString);
+      expect(str).toBeInTheDocument();
+    });
   });
 
-  it('should render text "All Dog Parks"', () => {
-    render(<MainNavigation />);
+  describe('Links', () => {
+    const links = [
+      <Link href='/'>The React Dog Parks</Link>,
+      <Link href='/all-dog-parks'>All Dog Parks</Link>,
+      <Link href='/new-dog-park'>Add a New Dog Park</Link>
+    ]
+    it('render correctly', () => {
+      const tree = renderer.create(links).toJSON();
 
-    const dogParksString = screen.getByText('All Dog Parks');
-    expect(dogParksString).toBeInTheDocument();
-  });
-
-  it('should render text "Add a New Dog Park"', () => {
-    render(<MainNavigation />);
-
-    const dogParksString = screen.getByText('Add a New Dog Park');
-    expect(dogParksString).toBeInTheDocument();
+      expect(tree).toMatchSnapshot();
+    });
   });
 });
