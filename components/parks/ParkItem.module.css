@@ -23,4 +23,5 @@
 .description h3 {
   font-size: 1.25rem;
   color: #2c292b;
+  text-transform: capitalize;
 }

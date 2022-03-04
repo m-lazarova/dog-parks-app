@@ -1,4 +1,5 @@
 import ParkItem from "./ParkItem";
+import classes from './ParkList.module.css';
 const ParkList = () => {
 
   const DUMMY_PARKS = [
@@ -6,7 +7,7 @@ const ParkList = () => {
     {id: 'p2', image: 'https://i.imgur.com/DHfxUyW.jpg', title: 'Great park for puppies', address: 'Street 2, City 2, Some Post Code', description: 'This is amazing for puppies'}
   ]
   return (
-    <ul>
+    <ul className={classes.list}>
       {DUMMY_PARKS.map((park) => (
         <ParkItem 
         key={park.id}
