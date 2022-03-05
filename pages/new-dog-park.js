@@ -1,5 +1,11 @@
+import NewParkForm from "../components/parks/NewParkForm";
 const NewDogPark = () => {
-  return <p>Placeholder page for adding a new park</p>
+
+  const addParkHandler = () => {
+    console.log('Adding some parks');
+  };
+  
+  return <NewParkForm onAddPark={addParkHandler}/>
 }
 
 export default NewDogPark;
