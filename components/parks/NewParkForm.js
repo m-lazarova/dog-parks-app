@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 
+import classes from './NewParkForm.module.css';
+
 const NewParkForm = (props) => {
   const nameInputRef = useRef();
   const imageInputRef = useRef();
@@ -33,24 +35,24 @@ const NewParkForm = (props) => {
     props.onAddPark(parkData);
   }
   return (
-    <form onSubmit={submitHandler}>
-      <div>
+    <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes.control}>
         <label htmlFor="name">Park Name</label>
         <input type="text" required id="name" ref={nameInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="image">Park Image</label>
         <input type="text" required id="image" ref={imageInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="address">Address</label>
         <input type="text" required id="address" ref={addressInputRef} />
       </div>
-      <div>
+      <div className={classes.control}>
         <label htmlFor="description">Description</label>
         <input type="text" required id="description" ref={descriptionInputRef}  />
       </div>
-      <div>
+      <div className={classes.checkbox}>
         <p>What kind of park is it?</p>
         <label htmlFor="enclosed">Enclosed</label>
         <input type="checkbox" id="enclosed" ref={enclosedInputRef}/>
@@ -59,7 +61,7 @@ const NewParkForm = (props) => {
         <label htmlFor="agility">Agility</label>
         <input type="checkbox" id="agility" ref={agilityInputRef} />
       </div>
-      <div>
+      <div className={classes.actions}>
         <button>Add a new park!</button>
       </div>
     </form>
