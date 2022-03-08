@@ -1,6 +1,7 @@
-import Router, { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import NewParkForm from "../components/parks/NewParkForm";
 function NewDogPark(){
+  const router = useRouter();
   async function addParkHandler(enteredParkData)  {
     const response = await fetch('/api/new-dog-park', {
       method: 'POST',
@@ -15,7 +16,7 @@ function NewDogPark(){
     const data = await response.json();
     console.log(data);
 
-    Router.replace('/');
+    router.replace('/');
   };
   
   return <NewParkForm onAddPark={addParkHandler}/>
